@@ -34,7 +34,7 @@ public class VisualizzaDettaglioAbitanteServlet extends HttpServlet {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
+		
 		request.setAttribute("abitanteDaInviareAPaginaDettaglio", result);
 		//response.getWriter().append("Volevi visualizzare abitante con id: "+parametroIdDellAbitanteDiCuiVoglioIlDettaglio );
 		RequestDispatcher rd = request.getRequestDispatcher("dettaglio.jsp");

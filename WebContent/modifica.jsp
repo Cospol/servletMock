@@ -29,7 +29,9 @@
 		<input type="text" name="mottoDiVitaInput" id="mottoDiVitaInputId" value=<%=abitante.getMottoDiVita() %>>
 		<br><br>
 		<input type="submit" value="MODIFICA">
-	
+		
 	</form>
+	<p style="color: red;"> <%String message = (String)request.getAttribute("messageError"); %>
+	<%=message != null ? request.getAttribute("messageError") : ""  %>
 </body>
 </html>

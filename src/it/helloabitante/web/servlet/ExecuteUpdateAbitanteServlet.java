@@ -49,6 +49,7 @@ public class ExecuteUpdateAbitanteServlet extends HttpServlet {
 		else {
 			abitanteInstance = new Abitante(Long.parseLong(id),nome,cognome,codiceFiscale,Integer.parseInt(eta),mottoDiVita);
 			request.setAttribute("abitanteDaInviareAPaginaModifica", abitanteInstance);
+			request.setAttribute("messageError", "inserisci tutti i campi"  );
 			RequestDispatcher rd = request.getRequestDispatcher("modifica.jsp");
 			rd.forward(request, response);
 		}
