@@ -17,15 +17,15 @@ import it.helloabitante.service.MyServiceFactory;
 @WebServlet("/ExecuteUpdateAbitanteServlet")
 public class ExecuteUpdateAbitanteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ExecuteUpdateAbitanteServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
- 
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public ExecuteUpdateAbitanteServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String id = request.getParameter("idInput");
 		String nome = request.getParameter("nomeInput");
@@ -49,12 +49,12 @@ public class ExecuteUpdateAbitanteServlet extends HttpServlet {
 		else {
 			abitanteInstance = new Abitante(Long.parseLong(id),nome,cognome,codiceFiscale,Integer.parseInt(eta),mottoDiVita);
 			request.setAttribute("abitanteDaInviareAPaginaModifica", abitanteInstance);
-			 RequestDispatcher rd = request.getRequestDispatcher("modifica.jsp");
-			 rd.forward(request, response);
+			RequestDispatcher rd = request.getRequestDispatcher("modifica.jsp");
+			rd.forward(request, response);
 		}
-			 
-		 //response.getWriter().append("Volevi visualizzare abitante con id: "+parametroIdDellAbitanteDiCuiVoglioIlDettaglio );
-		
+
+		//response.getWriter().append("Volevi visualizzare abitante con id: "+parametroIdDellAbitanteDiCuiVoglioIlDettaglio );
+
 	}
 
 }

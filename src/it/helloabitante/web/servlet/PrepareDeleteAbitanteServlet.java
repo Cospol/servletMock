@@ -19,33 +19,33 @@ import it.helloabitante.service.abitante.AbitanteService;
 @WebServlet("/PrepareDeleteAbitanteServlet")
 public class PrepareDeleteAbitanteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    
-    public PrepareDeleteAbitanteServlet() {
-        super();
-        
-    }
- 
+
+
+	public PrepareDeleteAbitanteServlet() {
+		super();
+
+	}
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String parametroIdDellAbitanteDiCuiVoglioIlDettaglio = request.getParameter("idDaInviareComeParametro");
-		 
-	 	AbitanteService abitanteServiceInstance = MyServiceFactory.getAbitanteServiceInstance();
-	 	Abitante result = null;
-	 	try {
-			  result = abitanteServiceInstance.caricaSingoloElemento(Long.parseLong(parametroIdDellAbitanteDiCuiVoglioIlDettaglio)) ;
-			
-	 	} catch (NumberFormatException e) {
-	 		e.printStackTrace();
+
+		AbitanteService abitanteServiceInstance = MyServiceFactory.getAbitanteServiceInstance();
+		Abitante result = null;
+		try {
+			result = abitanteServiceInstance.caricaSingoloElemento(Long.parseLong(parametroIdDellAbitanteDiCuiVoglioIlDettaglio)) ;
+
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
 		} catch (Exception e) {
-	 		e.printStackTrace();
+			e.printStackTrace();
 		}
-	 	
-		 request.setAttribute("abitanteDaInviareAPaginaDettaglio", result);
-		 //response.getWriter().append("Volevi visualizzare abitante con id: "+parametroIdDellAbitanteDiCuiVoglioIlDettaglio );
-		 RequestDispatcher rd = request.getRequestDispatcher("delete.jsp");
-		 rd.forward(request, response);
+
+		request.setAttribute("abitanteDaInviareAPaginaDettaglio", result);
+		//response.getWriter().append("Volevi visualizzare abitante con id: "+parametroIdDellAbitanteDiCuiVoglioIlDettaglio );
+		RequestDispatcher rd = request.getRequestDispatcher("delete.jsp");
+		rd.forward(request, response);
 	}
- 
-	 
+
+
 
 }

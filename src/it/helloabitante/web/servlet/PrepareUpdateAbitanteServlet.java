@@ -19,33 +19,33 @@ import it.helloabitante.service.abitante.AbitanteService;
 @WebServlet("/PrepareUpdateAbitanteServlet")
 public class PrepareUpdateAbitanteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-   
-    public PrepareUpdateAbitanteServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
- 
+
+	public PrepareUpdateAbitanteServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String parametroIdDellAbitanteCheStringVoglioModificare = request.getParameter("idDaInviareComeParametro");
-		
-	 	AbitanteService abitanteServiceInstance = MyServiceFactory.getAbitanteServiceInstance();
-	 	Abitante result = null;
-	 	try {
-			  result = abitanteServiceInstance.caricaSingoloElemento(Long.parseLong(parametroIdDellAbitanteCheStringVoglioModificare)) ;
-			
-	 	} catch (NumberFormatException e) {
-	 		e.printStackTrace();
-		} catch (Exception e) {
-	 		e.printStackTrace();
-		}
-	 	
-		 request.setAttribute("abitanteDaInviareAPaginaModifica", result);
-		 //response.getWriter().append("Volevi visualizzare abitante con id: "+parametroIdDellAbitanteDiCuiVoglioIlDettaglio );
-		 RequestDispatcher rd = request.getRequestDispatcher("modifica.jsp");
-		 rd.forward(request, response);
-	}
-	 
 
-	 
+		AbitanteService abitanteServiceInstance = MyServiceFactory.getAbitanteServiceInstance();
+		Abitante result = null;
+		try {
+			result = abitanteServiceInstance.caricaSingoloElemento(Long.parseLong(parametroIdDellAbitanteCheStringVoglioModificare)) ;
+
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		request.setAttribute("abitanteDaInviareAPaginaModifica", result);
+		//response.getWriter().append("Volevi visualizzare abitante con id: "+parametroIdDellAbitanteDiCuiVoglioIlDettaglio );
+		RequestDispatcher rd = request.getRequestDispatcher("modifica.jsp");
+		rd.forward(request, response);
+	}
+
+
+
 
 }

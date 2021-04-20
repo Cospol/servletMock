@@ -18,9 +18,9 @@ public class SearchServlet extends HttpServlet {
 	public SearchServlet() {
 		super();
 	}
-	
 
- 
+
+
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -29,15 +29,15 @@ public class SearchServlet extends HttpServlet {
 		String nomeDaPagina = request.getParameter("nomeInput");
 		String cognomeDaPagina = request.getParameter("cognomeInput");
 
- 		if (nomeDaPagina.equals("") && cognomeDaPagina.equals("")) {
+		if (nomeDaPagina.equals("") && cognomeDaPagina.equals("")) {
 			String messaggioDaInviareAPagina = "Attenzione! E' necessario valorizzare almeno un campo.";
 			request.setAttribute("messaggioDiErrore", messaggioDaInviareAPagina);
 			destinazione = "searchForm.jsp";
 		} else {
-		 
+
 			request.setAttribute("listAbitantiAttributeName",
 					MyServiceFactory.getAbitanteServiceInstance().cercaPerNomeECognome(nomeDaPagina, cognomeDaPagina));
-		 
+
 			destinazione = "results.jsp";
 		}
 

@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
- import it.helloabitante.model.Abitante;
+import it.helloabitante.model.Abitante;
 import it.helloabitante.service.MyServiceFactory;
 
 @WebServlet("/ExecuteInsertAbitanteServlet")
@@ -40,10 +40,10 @@ public class ExecuteInsertAbitanteServlet extends HttpServlet {
 			rd.forward(request, response);
 
 		}
-			
 
-		
-		
+
+
+
 	}
 
 }

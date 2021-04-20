@@ -19,16 +19,15 @@ import it.helloabitante.service.abitante.AbitanteService;
 @WebServlet("/ExecuteDeleteAbitanteServlet")
 public class ExecuteDeleteAbitanteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ExecuteDeleteAbitanteServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
-	 
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public ExecuteDeleteAbitanteServlet() {
+		super();
+	}
+
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String parametroIdDellAbitanteCheVoglioEliminare = request.getParameter("idDaInviareComeParametro");
 		try {
@@ -40,9 +39,9 @@ public class ExecuteDeleteAbitanteServlet extends HttpServlet {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 	}
 
-	 
+
 
 }
